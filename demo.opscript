@@ -1,0 +1,98 @@
+// ARPHA11 OPS
+// OpScript Demo
+// Demonstrates basic language functionality
+
+clor BLUE
+disp ("========================================")
+disp ("       ARPHA11 OPS - OPSCRIPT DEMO")
+disp ("========================================")
+clor DEFAULT
+
+sleep 1
+
+disp ("")
+disp ("Initializing OpScript demonstration...")
+sleep 0.5
+
+ran (1)-(100) %system_number%
+
+disp ("Generated system number: %system_number%")
+
+userin %name%="Enter your name:"
+
+disp ("")
+disp ("Welcome, %name%!")
+sleep 0.5
+
+ilit %name% == Judah
+    clor PINK
+    disp ("Developer access recognized.")
+    clor DEFAULT
+else
+    disp ("Standard user session.")
+endil
+
+disp ("")
+disp ("Generating random diagnostic value...")
+ran (1)-(10) %diagnostic%
+
+ilit %diagnostic% > 5
+    clor YELLOW
+    disp ("WARNING: Diagnostic value is above normal.")
+    clor DEFAULT
+else
+    clor BLUE
+    disp ("OK: Diagnostic value is within normal range.")
+    clor DEFAULT
+endil
+
+sleep 1
+
+disp ("")
+disp ("Executing nested commands...")
+
+exec (disp ("[OPS] EXEC MODULE ACTIVE")) (ran (100)-(999) %exec_number%)
+
+disp ("Execution value: %exec_number%")
+
+sleep 1
+
+disp ("")
+disp ("Creating data maps...")
+
+map 1 [          ]
+map 2 [               ]
+
+readmap {1} %map_one%
+readmap {2} %map_two%
+
+disp ("MAP 1 VALUE: %map_one%")
+disp ("MAP 2 VALUE: %map_two%")
+
+sleep 1
+
+disp ("")
+disp ("Running comparison...")
+
+ilit %map_one% > %map_two%
+    clor RED
+    disp ("MAP 1 > MAP 2")
+    clor DEFAULT
+else
+    clor BLUE
+    disp ("MAP 1 <= MAP 2")
+    clor DEFAULT
+endil
+
+sleep 1
+
+lbl final
+
+disp ("")
+clor BLUE
+disp ("========================================")
+disp ("       OPSCRIPT DEMO COMPLETE")
+disp ("========================================")
+clor DEFAULT
+
+disp ("Thank you for testing OpScript.")
